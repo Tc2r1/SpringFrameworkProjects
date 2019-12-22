@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head  lang="en">
+    <title>Spring Core Online Assignment! - Customer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../../static/css/spring-core.css"
+          th:href="@{../../static/css/spring-core.css}" rel="stylesheet" media="screen"/>
+
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Add/Edit Customer</h2>
+        </div>
+    </div>
+    <div class="row">
+         <div class="col-sm-8">
+             <form class="form-horizontal" th:object="${customer}" th:action="@{/customer}" method="post">
+                 <input type="hidden" th:field="*{id}"/>
+                 <input type="hidden" th:field="*{version}"/>
+
+                 <div class="form-group">
+                         <label class="col-sm-2 control-label">First Name:</label>
+                         <div class="col-sm-2">
+                             <input type="text" class="form-control-static" th:field="*{firstName}"/>
+                         </div>
+
+                         <label class="col-sm-4 control-label">Last Name:</label>
+                         <div class="col-sm-2">
+                             <input type="text" class="form-control-static" th:field="*{lastName}"/>
+                         </div>
+                 </div>
+
+                 <div class="form-group">
+                     <label class="col-sm-2 control-label">Email:</label>
+                     <div class="col-sm-2">
+                         <input type="text" class="form-control-static" th:field="*{email}"/>
+                     </div>
+
+                     <label class="col-sm-4 control-label">Phone Number:</label>
+                     <div class="col-sm-2">
+                         <input type="text" class="form-control-static" th:field="*{phoneNumber}"/>
+                     </div>
+                 </div>
+
+
+                 <div class="form-group">
+                     <label class="col-sm-2 sm-2 control-label">Address 1:</label>
+                     <div class="col-sm-4">
+                         <input type="text" class="form-control-static" th:field="*{addressLineOne}"/>
+                     </div>
+                     <label class="col-sm-2 sm-2 control-label">Address 2:</label>
+                     <div class="col-sm-4">
+                         <input type="text" class="form-control-static" th:field="*{addressLineTwo}"/>
+                     </div>
+                 </div>
+
+                 <div class="form-group">
+                     <label class="col-sm-2 sm-2 control-label">City:</label>
+                     <div class="col-sm-4">
+                         <input type="text" class="form-control-static" th:field="*{city}"/>
+                     </div>
+
+                     <label class="col-sm-2 sm-2 control-label">State:</label>
+                     <div class="col-sm-4">
+                         <input type="text" class="form-control-static" th:field="*{state}"/>
+                     </div>
+                 </div>
+                 <div class="form-group">
+                     <label class="col-sm-2 control-label">Zipcode:</label>
+                     <div class="col-sm-2">
+                         <input type="text" class="form-control-static" th:field="*{zipCode}"/>
+                     </div>
+                 </div>
+
+                 <div class="row">
+                     <button type="submit" class="btn btn-default">Submit</button>
+                 </div>
+             </form>
+         </div>
+    </div>
+</div>
+
+</body>
+</html>
